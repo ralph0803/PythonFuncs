@@ -1,13 +1,13 @@
 # PythonFuncs
 常用的matlab函数对应到python函数
 
-sqrt(x)
+MATLAB中开平方根的运算：sqrt(x)
 
 	import math
 	math.sqrt(x)
 	x ** 0.5
 
-^
+MATLAB中的幂运算：^
 
 	**
 
