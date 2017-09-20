@@ -47,3 +47,9 @@ MATLAB中string的连结：str4 = [str1, str2, str3]
 
 	str4 = str1 + str2 + str3
 	
+检查库中函数的办法
+
+	import module # Imports some module
+	everything = dir(module) # Sets everything to a list of things from the module
+	print everything # Prints 'em all!
+
