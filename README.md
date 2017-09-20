@@ -26,3 +26,8 @@ python3里面没有long这个长整型，统一由int代替
 	x.upper()
 	x.lower()
 
+打印字符串
+
+	print "Ah, so your name is ___, your quest is ___, and your favorite color is ___." ___ (name, quest, color)
+	print "Ah, so your name is %s, your quest is %s, and your favorite color is %s." %s (name, quest, color)
+	
