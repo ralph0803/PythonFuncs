@@ -31,3 +31,9 @@ python3里面没有long这个长整型，统一由int代替
 	print "Ah, so your name is ___, your quest is ___, and your favorite color is ___." ___ (name, quest, color)
 	print "Ah, so your name is %s, your quest is %s, and your favorite color is %s." %s (name, quest, color)
 	
+与或符判断顺序：
+
+	1 -- not is evaluated first;
+	2 -- and is evaluated next;
+	3 -- or is evaluated last.
+
