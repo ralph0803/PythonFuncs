@@ -37,3 +37,4 @@ python3里面没有long这个长整型，统一由int代替
 	2 -- and is evaluated next;
 	3 -- or is evaluated last.
 
+def, if, else, elif都要在最后加上冒号
