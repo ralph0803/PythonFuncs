@@ -10,3 +10,7 @@ sqrt(x)
 
 	**
 
+check if integer: mod(x,1); ~isinf(x) & floor(x) == x
+
+	x.is_integer()
+	
