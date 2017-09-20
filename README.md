@@ -42,3 +42,8 @@ def, if, else, elif都要在最后加上冒号
 检测字符串是否只由字母组成
 
 	x.isalpha()
+	
+MATLAB中string的连结：str4 = [str1, str2, str3]
+
+	str4 = str1 + str2 + str3
+	
