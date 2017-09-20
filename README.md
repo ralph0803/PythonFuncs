@@ -5,6 +5,7 @@ sqrt(x)
 
 	import math
 	math.sqrt(x)
+	x ** 0.5
 
 ^
 
@@ -20,3 +21,8 @@ python3里面没有long这个长整型，统一由int代替
 	
 	fifth_letter = "MONTY"[4] # 可以直接在声明的时候就直接取某一个值
 	
+取某一既带大写又带小写字母的全部大或小写的字符串
+
+	x.upper()
+	x.lower()
+
