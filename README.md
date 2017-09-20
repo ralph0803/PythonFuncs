@@ -5,3 +5,8 @@ sqrt(x)
 
 	import math
 	math.sqrt(x)
+
+^
+
+	**
+
