@@ -61,6 +61,7 @@ MATLAB中连结矩阵元素：x = []; x = [x y];
 
 	x = []
 	x.append(y)
+	x.remove(y)
 	
 MATLAB向量取部分值：a(1:end); a(2:end); a(2:end-1); a(1:3)
 
