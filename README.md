@@ -107,3 +107,12 @@ MATLAB向量取部分值：a(1:end); a(2:end); a(2:end-1); a(1:3)
 	my_dict["fish"].sort()
 	my_dict[0].remove("a")
 	
+MATLAB中访问二维数组：a(1,2) = 1
+
+	a[1][2] = 1
+	
+判断一个值是否在一个向量里面
+
+	if x not in A
+	if guess_row not in range(5)
+
