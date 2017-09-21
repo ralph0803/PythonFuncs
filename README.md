@@ -145,3 +145,12 @@ MATLAB中访问二维数组：a(1,2) = 1
 	list_b = [2, 4, 8, 10, 30, 40, 50, 60, 70, 80, 90]
 	for a, b in zip(list_a, list_b):
 	
+字符串替换或指替换用replace
+	
+	def censor(text,word):
+		if word in text:
+			text = text.replace(word, "*" * len(word))
+		return text
+	
+	censor("this hack is wack hack", "hack") # 结果为 "this **** is wack ****"
+	
