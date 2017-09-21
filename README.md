@@ -96,8 +96,5 @@ MATLAB向量取部分值：a(1:end); a(2:end); a(2:end-1); a(1:3)
 	}
 	print my_dict["fish"][0]
 	my_dict["fish"].sort()
-	my_dict["fish"].remove("a")
-	
-
-	
+	my_dict[0].remove("a")
 	
