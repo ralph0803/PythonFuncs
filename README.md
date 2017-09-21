@@ -121,3 +121,7 @@ MATLAB中访问二维数组：a(1,2) = 1
 	for x in range(5):
     	board.append(["O"] * 5)
 	
+打印在同一行
+
+	print char, # 逗号是说明打印要在同一行
+	print char # 正常打印
