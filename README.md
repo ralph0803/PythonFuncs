@@ -170,3 +170,10 @@ MATLAB里面的floor和ceil函数
 	np.floor()
 	np.ceil()
 
+MATLAB定义一个数组后，a = 1:5，可以直接打印出来
+
+	a = range(5)
+	print a # 打印不出来
+	a = list(range(5))
+	print a
+	
