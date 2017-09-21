@@ -63,6 +63,9 @@ MATLAB中连结矩阵元素：x = []; x = [x y];
 	x.append(y)
 	x.remove(y)
 	
+	n.pop(index) # will remove the item at index from the list and return it to you
+	n.remove(item) # will remove the actual item if it finds it
+	
 MATLAB向量取部分值：a(1:end); a(2:end); a(2:end-1); a(1:3)
 
 	a[0:]
