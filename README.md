@@ -94,7 +94,7 @@ MATLAB向量取部分值：a(1:end); a(2:end); a(2:end-1); a(1:3)
 	  "cash": -4483,
 	  "luck": "good"
 	}
-	print my_dict["fish"][0]
+	print my_dict["fish"][0] # 不能打印某一个key，想打印key只能遍历的方式去打印
 	my_dict["fish"].sort()
 	my_dict[0].remove("a")
 	
