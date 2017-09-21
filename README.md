@@ -139,3 +139,9 @@ MATLAB中访问二维数组：a(1,2) = 1
 	for index, item in enumerate(choices):
 		print index, item # 把序号和字符串的值都打出来了
 
+有一个循环遍历多个数组
+
+	list_a = [3, 9, 17, 15, 19]
+	list_b = [2, 4, 8, 10, 30, 40, 50, 60, 70, 80, 90]
+	for a, b in zip(list_a, list_b):
+	
