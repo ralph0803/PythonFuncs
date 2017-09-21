@@ -158,3 +158,8 @@ MATLAB中访问二维数组：a(1,2) = 1
 
 	x.count(item)
 	
+MATLAB中unique函数
+	
+	import numpy as np
+	np.unique()
+	
