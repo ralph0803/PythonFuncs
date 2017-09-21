@@ -165,3 +165,8 @@ MATLAB中unique函数
 	
 python里面的find只能找到第一个，rfind只能找到最后一个，而不像MATLAB里面的find可以找到所有的
 
+MATLAB里面的floor和ceil函数
+
+	np.floor()
+	np.ceil()
+
