@@ -87,3 +87,12 @@ MATLAB向量取部分值：a(1:end); a(2:end); a(2:end-1); a(1:3)
 	
 	del dict_name[key_name] # 删除
 	
+字典可以多维的
+	
+	my_dict = {
+	  "fish": ["c", "a", "r", "p"],
+	  "cash": -4483,
+	  "luck": "good"
+	}
+	print my_dict["fish"][0]
+	
