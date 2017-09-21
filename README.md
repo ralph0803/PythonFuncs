@@ -107,6 +107,12 @@ MATLAB向量取部分值：a(1:end); a(2:end); a(2:end-1); a(1:3)
 	my_dict["fish"].sort()
 	my_dict[0].remove("a")
 	
+字典打印key名称和key值的方法
+
+	d = {'a': 'apple', 'b': 'berry', 'c': 'cherry'}
+	for key in d:
+  		print key + " " + d[key]
+	
 MATLAB中访问二维数组：a(1,2) = 1
 
 	a[1][2] = 1
@@ -119,9 +125,10 @@ MATLAB中访问二维数组：a(1,2) = 1
 字符串二维数组初始化成单一字符的使用方法
 
 	for x in range(5):
-    	board.append(["O"] * 5)
+    		board.append(["O"] * 5)
 	
 打印在同一行
 
 	print char, # 逗号是说明打印要在同一行
 	print char # 正常打印
+
