@@ -83,6 +83,12 @@ MATLAB向量取部分值：a(1:end); a(2:end); a(2:end-1); a(1:3)
 	three_index = a.index(3)
 	a.insert(three_index,7)
 	
+向量可以直接连续用加号
+
+	a = [1, 2, 3]
+	b = [4, 5, 6]
+	print a + b
+
 字典可以直接赋值，不需要提前开辟内存空间
 
 	dict_name = {}
