@@ -69,3 +69,13 @@ MATLAB向量取部分值：a(1:end); a(2:end); a(2:end-1); a(1:3)
 	a[1:-1]
 	a[0:3]
 
+反查元素在向量中的位置，还可以在某一位置插入值
+
+	animals = ["aardvark", "badger", "duck", "emu", "fennec fox"]
+	duck_index = animals.index("duck")
+	animals.insert(duck_index,"cobra")
+	
+	a = [1,3,4,5]
+	three_index = a.index(3)
+	a.insert(three_index,7)
+	
