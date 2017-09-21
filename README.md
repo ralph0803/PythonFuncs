@@ -125,10 +125,17 @@ MATLAB中访问二维数组：a(1,2) = 1
 字符串二维数组初始化成单一字符的使用方法
 
 	for x in range(5):
-    		board.append(["O"] * 5)
+		board.append(["O"] * 5)
 	
 打印在同一行
 
 	print char, # 逗号是说明打印要在同一行
 	print char # 正常打印
+
+字符串数组还有一种遍历的方式
+
+	choices = ['pizza', 'pasta', 'salad', 'nachos']
+	print 'Your choices are:'
+	for index, item in enumerate(choices):
+		print index, item # 把序号和字符串的值都打出来了
 
