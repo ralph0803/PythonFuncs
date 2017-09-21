@@ -84,3 +84,5 @@ MATLAB向量取部分值：a(1:end); a(2:end); a(2:end-1); a(1:3)
 	dict_name = {}
 	dict_name[new_key] = new_value
 	
+	del dict_name[key_name] # 删除
+	
