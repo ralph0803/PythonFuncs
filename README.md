@@ -116,3 +116,8 @@ MATLAB中访问二维数组：a(1,2) = 1
 	if x not in A
 	if guess_row not in range(5)
 
+字符串二维数组初始化成单一字符的使用方法
+
+	for x in range(5):
+    	board.append(["O"] * 5)
+	
