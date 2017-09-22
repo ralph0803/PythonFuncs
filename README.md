@@ -182,3 +182,13 @@ MATLAB定义一个数组后，a = 1:5，可以直接打印出来
 	b = a.reverse() # b并没有被赋值
 	b = a[::-1] # b被赋值，深拷贝
 	
+MATLAB里面step为小数时候的等差数列：a = -4:0.1:4
+
+	import numpy as np
+	a = np.arange(-4,4,0.1)
+
+MATLAB里面自然对数：a = ln(x)
+
+	import numpy as np
+	a = np.log(x)
+	
