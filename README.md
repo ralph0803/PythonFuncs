@@ -177,3 +177,8 @@ MATLAB定义一个数组后，a = 1:5，可以直接打印出来
 	a = list(range(5))
 	print a
 	
+字符串复制
+
+	b = a.reverse() # b并没有被赋值
+	b = a[::-1] # b被赋值，深拷贝
+	
