@@ -192,3 +192,12 @@ MATLAB里面自然对数：a = ln(x)
 	import numpy as np
 	a = np.log(x)
 	
+Python文件IO的时候，尽量使用with as的语句，这样不用担心f.close()的问题
+
+	with open("text.txt", "w") as textfile:
+		textfile.write("Success!")
+	
+	textfile = open("text.txt", "w")
+	textfile.write("Success!")
+	textfile.close()
+	
