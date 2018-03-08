@@ -1,6 +1,18 @@
 # PythonFuncs
 常用的matlab函数对应到python函数
 
+MATLAB中 0:4
+
+	range(5)
+	
+MATLAB中 1:5
+
+	xrange(1,6,1) 或 xrange(1,6)
+	
+MATLAB中 1:2:5
+
+	xrange(1,6,2)
+	
 MATLAB中开平方根的运算：sqrt(x)
 
 	import math
