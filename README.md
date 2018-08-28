@@ -69,11 +69,15 @@ MATLAB中string的连结：str4 = [str1, str2, str3]
 
 	type(x) == int or type(x) == float # 而int和float都不用加引号
 
-MATLAB中连结矩阵元素：x = []; x = [x y];
+MATLAB中连结矩阵元素：x = []; x = [x; [a b]]; x = [x c d];
 
 	x = []
-	x.append(y)
-	x.remove(y)
+	x.append([a b])
+	x.remove([a b])
+	
+	x = []
+	x.exxpend([c d])
+	x.remove([d])
 	
 	n.pop(index) # will remove the item at index from the list and return it to you
 	n.remove(item) # will remove the actual item if it finds it
