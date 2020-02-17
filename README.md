@@ -2,13 +2,15 @@
 常用的matlab函数对应到python函数
 
 MATLAB中 0:4
-
-	range(5)
+```matlab
+range(5)
+```
 	
 MATLAB中 1:5
+```matlab
+xrange(1,6,1) 或 xrange(1,6)
+```
 
-	xrange(1,6,1) 或 xrange(1,6)
-	
 MATLAB中 1:2:5
 
 	xrange(1,6,2)
