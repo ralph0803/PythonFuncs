@@ -217,3 +217,12 @@ Python文件IO的时候，尽量使用with as的语句，这样不用担心f.clo
 	textfile.write("Success!")
 	textfile.close()
 	
+读取txt文件每一行，生成list
+```python	
+with open("text.txt", "w") as textfile:
+	textfile.read().splitlines()
+# 而不是下面的命令，否则list每一个元素里面结尾会有一个'\n'
+with open("text.txt", "w") as textfile:
+	textfile.readlines()
+```
+	
