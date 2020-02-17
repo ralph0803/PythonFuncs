@@ -221,8 +221,8 @@ np.unique()
 
 MATLAB里面的floor和ceil函数
 ```python
-	np.floor()
-	np.ceil()
+np.floor()
+np.ceil()
 ```
 MATLAB定义一个数组后，a = 1:5，可以直接打印出来
 ```python
