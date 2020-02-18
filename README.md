@@ -194,7 +194,7 @@ for index, item in enumerate(choices):
 list_a = [3, 9, 17, 15, 19]
 list_b = [2, 4, 8, 10, 30, 40, 50, 60, 70, 80, 90]
 for a, b in zip(list_a, list_b):
-```python
+```
 
 字符串替换或批量替换用replace
 ```python	
@@ -268,3 +268,19 @@ with open("text.txt", "w") as textfile:
 	textfile.readlines()
 ```
 	
+Python中`os.path.join()`产生的斜杠在Windows和Linux下的不同表现和解决方法:
+通过`pathlib.PurePath.as_posix()`。从Python 3.4开始可以通过`pathlib.PurePath.as_posix()`来生成斜杠（`/`）格式的路径，其实其实现原理和`str.replace()`并没有太大区别。例如：
+
+```python
+import os.path
+from pathlib import Path
+
+result = os.path.join('a', 'b', 'c')
+result = Path(result).as_posix()
+
+# 或者
+import os.path
+
+result = os.path.join('a', 'b', 'c')
+result = result.replace('\\', '/')
+```
