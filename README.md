@@ -284,3 +284,25 @@ import os.path
 result = os.path.join('a', 'b', 'c')
 result = result.replace('\\', '/')
 ```
+
+Python将输出记录到文本文件里面
+```python
+import sys
+class Logger(object):
+    def __init__(self, filename='default.log', stream=sys.stdout):
+	    self.terminal = stream
+	    self.log = open(filename, 'a')
+
+    def write(self, message):
+	    self.terminal.write(message)
+	    self.log.write(message)
+
+    def flush(self):
+	    pass
+
+sys.stdout = Logger('logname.log', sys.stdout)
+sys.stderr = Logger('logname_error_msg.log', sys.stderr)		# redirect std err, if necessary
+
+# now it works
+print(print something)
+```
