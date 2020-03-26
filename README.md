@@ -310,3 +310,24 @@ print(print something)
 Python的['str1'] + ['str2']会是['str1', 'str2']。['str1'] + 'str2'会是['str1', 's', 't', 'r', '2']
 
 Python的字典的value如果是一个列表，比如['str1', 'str2]，那么想取['str1']就是dict[key][0:1]，想取'str1'就是dict[key][0]
+
+Python中PIL的Image读入的图片转换成cv2读入的图片
+```python
+img_PIL = Image.open(image_path)
+
+# PIL格式中的width和height
+width = img_PIL.size[0]
+height = img_PIL.size[1]
+
+# 转换成RGB模式
+pil_image = img_PIL.convert('RGB')
+
+# 转换成cv2的BGR模式
+img_cv2_channel3 = np.array(pil_image)[:, :, [2, 1, 0]]
+
+# 从[h, w, 3]转换成[h, w]
+img_cv2 = cv2.cvtColor(img_cv2_channel3, cv2.COLOR_BGR2GRAY)
+
+# 此时 img_cv2_channel3 等价于 img = cv2.imread(imgPath)
+# 此时 img_cv2 等价于 img = cv2.imread(imgPath, 0)
+```
