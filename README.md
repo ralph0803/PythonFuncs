@@ -285,7 +285,7 @@ result = os.path.join('a', 'b', 'c')
 result = result.replace('\\', '/')
 ```
 
-Python将输出记录到文本文件里面
+Python将输出记录到txt里面
 ```python
 import sys
 class Logger(object):
