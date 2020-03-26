@@ -355,4 +355,8 @@ im = np.array(img_PIL)
 im2 = (im // 2 ** 8).astype(np.uint8)
 im3 = Image.fromarray(im2)
 im3.save(image_save_path)
+
+# img_PIL_2会显示为mode L
+img_PIL_2 = Image.open(image_save_path)
+
 ```
