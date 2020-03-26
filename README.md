@@ -313,6 +313,10 @@ Python的字典的value如果是一个列表，比如['str1', 'str2]，那么想
 
 Python中PIL的Image读入的图片转换成cv2读入的图片
 ```python
+from PIL import Image
+import cv2
+import numpy as np
+
 img_PIL = Image.open(image_path)
 
 # PIL格式中的width和height
@@ -330,4 +334,25 @@ img_cv2 = cv2.cvtColor(img_cv2_channel3, cv2.COLOR_BGR2GRAY)
 
 # 此时 img_cv2_channel3 等价于 img = cv2.imread(imgPath)
 # 此时 img_cv2 等价于 img = cv2.imread(imgPath, 0)
+```
+
+Python中cv2读入的图片转换成PIL的Image读入的图片
+```python
+
+# cv2读入3通道
+img = cv2.imread(image_path)
+img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+im_pil = Image.fromarray(img)
+```
+
+Python中PIL的Image读入图片从mode I (16 bit灰度图像) 转换成model L （8 bit灰度图像）
+```python
+
+# 假设img_PIL是mode I
+img_PIL = Image.open(image_path)
+
+im = np.array(img_PIL)
+im2 = (im // 2 ** 8).astype(np.uint8)
+im3 = Image.fromarray(im2)
+im3.save(image_save_path)
 ```
