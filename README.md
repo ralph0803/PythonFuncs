@@ -360,3 +360,29 @@ im3.save(image_save_path)
 img_PIL_2 = Image.open(image_save_path)
 
 ```
+Python打印图片示例
+
+```python
+# Plot
+plt.ioff()      # don't show the figure, and directly save to png
+
+plt.style.use('ggplot')
+plt.rcParams.update({'font.size': 14})
+fig, ax1 = plt.subplots(1)
+# fig, ax1 = plt.subplots(1, figsize=(6,6))	# 定制window size
+
+ax1.plot(train_iter_lst, train_loss_lst, label="Training loss")
+ax1.plot(valid_iter_lst, valid_loss_lst, label="Validation loss")
+# ax1.set_xlim(0, 1)	# 定制xlim
+# ax1.set_ylim(0, 1)	# 定制ylim
+# ax1.yaxis.set_ticks(np.arange(0, 1, 0.1))	# 定制xticks
+# ax1.xaxis.set_ticks(np.arange(0, 1, 0.1))	# 定制yticks
+ax1.set_xlabel('Iteration')
+ax1.set_ylabel('Loss')
+ax1.yaxis.grid(True)
+ax1.xaxis.grid(True)
+ax1.set_title('Training loss vs. Validation loss', fontsize=15)
+ax1.legend(loc="upper right")
+fig.savefig('filename.png')  # save the figure to file
+plt.close(fig)  # close the figure
+```
