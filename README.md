@@ -366,23 +366,40 @@ Python打印图片示例
 # Plot
 plt.ioff()      # don't show the figure, and directly save to png
 
-plt.style.use('ggplot')
+# plt.style.use('ggplot')
 plt.rcParams.update({'font.size': 14})
-fig, ax1 = plt.subplots(1)
-# fig, ax1 = plt.subplots(1, figsize=(6,6))	# 定制window size
-
+# fig, ax1 = plt.subplots(1)
+fig, ax1 = plt.subplots(1, figsize=(11, 6))	# 定制window size
+ax1_color = 'tab:blue'
 ax1.plot(train_iter_lst, train_loss_lst, label="Training loss")
 ax1.plot(valid_iter_lst, valid_loss_lst, label="Validation loss")
-# ax1.set_xlim(0, 1)	# 定制xlim
-# ax1.set_ylim(0, 1)	# 定制ylim
-# ax1.yaxis.set_ticks(np.arange(0, 1, 0.1))	# 定制xticks
-# ax1.xaxis.set_ticks(np.arange(0, 1, 0.1))	# 定制yticks
+ax1.set_ylim(ymin=0)
 ax1.set_xlabel('Iteration')
-ax1.set_ylabel('Loss')
+ax1.set_ylabel('Loss', color=ax1_color)
+ax1.tick_params(axis='y', labelcolor=ax1_color)
 ax1.yaxis.grid(True)
 ax1.xaxis.grid(True)
+# ax1.legend(loc="upper right")
 ax1.set_title('Training loss vs. Validation loss', fontsize=15)
-ax1.legend(loc="upper right")
-fig.savefig('filename.png')  # save the figure to file
+
+# 开第二y轴
+ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+ax2_color = 'tab:green'
+ax2.plot(lr_iter_lst, lr_lst, color=ax2_color, linestyle='--', label="Learning rate")
+ax2.set_ylim(ymin=0)
+ax2.set_ylabel('Learning rate', color=ax2_color)  # we already handled the x-label with ax1
+ax2.tick_params(axis='y', labelcolor=ax2_color)
+# ax2.legend(loc="center right")
+
+# 合并两个不同y轴的线的legend
+h1, l1 = ax1.get_legend_handles_labels()
+h2, l2 = ax2.get_legend_handles_labels()
+ax1.legend(h1 + h2, l1 + l2, loc="upper right")
+
+# 将两个不同y轴的ticks对齐
+ax2.set_yticks(np.linspace(0, ax2.get_yticks()[-1], len(ax2.get_yticks())))
+ax1.set_yticks(np.linspace(0, ax1.get_yticks()[-1], len(ax2.get_yticks())))
+
+fig.savefig(os.path.join(save_folder, 'Train-loss-Val-loss.png'))  # save the figure to file
 plt.close(fig)  # close the figure
 ```
