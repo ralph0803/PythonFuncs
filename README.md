@@ -361,8 +361,8 @@ class DebugLogger(object):
 if __name__ == '__main__':
     filename = 'all.log'
     sys.stdout = DebugLogger(filename)
-    sys.stderr = sys.stdout
-    print('test')
+    err_filename = 'error.log'
+    sys.stderr = DebugLogger(err_filename)
 ```
 
 Python的['str1'] + ['str2']会是['str1', 'str2']。['str1'] + 'str2'会是['str1', 's', 't', 'r', '2']
