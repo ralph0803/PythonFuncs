@@ -307,6 +307,64 @@ sys.stderr = Logger('logname_error_msg.log', sys.stderr)		# redirect std err, if
 print(print something)
 ```
 
+Python将输出记录到log里面
+```python
+import os
+import sys
+import datetime
+from datetime import timedelta
+
+
+class DebugLogger(object):
+    def __init__(self, filename):
+        utc_dt = datetime.datetime.utcnow()
+        bj_dt = utc_dt + timedelta(hours=8)
+        timestamp = datetime.datetime.strftime(bj_dt, '%Y-%m-%d')
+        #build up full path to filename
+        log_dir = 'logs'
+        if not os.path.exists(log_dir):
+            os.makedirs(log_dir)
+        logfile = os.path.join(log_dir, filename + '.' + timestamp)
+        self.terminal = sys.stdout
+        self.log = open(logfile, 'a')
+        self.log.write('\n')
+        self.beginning = True
+
+    def write(self, message):
+        if self.beginning:
+            utc_dt = datetime.datetime.utcnow()
+            bj_dt = utc_dt + timedelta(hours=8)
+            timestamp = datetime.datetime.strftime(bj_dt, '%Y-%m-%d-%H:%M:%S.%f')
+            self.log.write(timestamp + '-(GMT+8) - ')
+            self.beginning = False
+        if message != '\n':
+            # write to screen
+            self.terminal.write(message)
+            # write to file
+            self.log.write(message)
+            self.flush()
+        elif message == '\n':
+            self.terminal.write(message)
+            self.log.write('\n')
+            self.beginning = True
+            self.flush()
+
+    def flush(self):
+        # self.terminal.flush()
+        self.log.flush()
+        # os.fsync(self.log.fileno())
+
+    def close(self):
+        self.log.close()
+
+
+if __name__ == '__main__':
+    filename = 'all.log'
+    sys.stdout = DebugLogger(filename)
+    sys.stderr = sys.stdout
+    print('test')
+```
+
 Python的['str1'] + ['str2']会是['str1', 'str2']。['str1'] + 'str2'会是['str1', 's', 't', 'r', '2']
 
 Python的字典的value如果是一个列表，比如['str1', 'str2]，那么想取['str1']就是dict[key][0:1]，想取'str1'就是dict[key][0]
